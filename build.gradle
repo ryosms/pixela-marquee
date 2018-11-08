@@ -27,7 +27,8 @@ test {
 }
 
 dependencies {
-    compile "org.apache.xmlgraphics:batik-util:${batikVersion}"
+    compile "org.apache.xmlgraphics:batik-transcoder:${batikVersion}"
+    compile "org.apache.xmlgraphics:batik-codec:${batikVersion}"
     compile "args4j:args4j:${args4jVersion}"
     
     testCompile "org.junit.jupiter:junit-jupiter-api:${jUnitVersion}"
