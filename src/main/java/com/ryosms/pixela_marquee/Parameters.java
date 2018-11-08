@@ -13,18 +13,23 @@ import org.kohsuke.args4j.Option;
  */
 class Parameters {
 
-    @Option(name = "--username", aliases = {"-u"}, metaVar = "<username>",
+    @Option(name = "-u", aliases = {"--user-name"}, metaVar = "<username>",
             usage = "username who owns graph")
     private String userName;
 
-    @Option(name = "--graph", usage = "graph name that will be converted")
+    @Option(name = "-g", aliases = {"--graph"}, metaVar = "<graph-id>",
+            usage = "graph id that will be converted")
     private String graph;
 
-    @Option(name = "--help", aliases = {"-h"}, usage = "show help", help = true)
+    @Option(name = "-h", aliases = {"--help"}, usage = "show help")
     private Boolean help = false;
 
     private boolean parseArg(String[] args) throws CmdLineException {
         CmdLineParser parser = new CmdLineParser(this);
+        if (args.length == 0) {
+            parser.printUsage(System.err);
+            return false;
+        }
 
         parser.parseArgument(args);
         if (help) {
