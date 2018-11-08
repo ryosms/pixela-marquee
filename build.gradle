@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+group 'com.ryosms'
+version '2018.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform {
+        includeEngines 'junit-jupiter'
+    }
+    testLogging {
+        exceptionFormat 'full'
+        events "PASSED", "FAILED", "SKIPPED"
+    }
+}
+
+dependencies {
+    testCompile "org.junit.jupiter:junit-jupiter-api:${jUnitVersion}"
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:${jUnitVersion}"
+}
