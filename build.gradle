@@ -1,7 +1,7 @@
 apply plugin: 'application'
 
 group 'com.ryosms'
-version '2018.1-SNAPSHOT'
+version '2018.1'
 
 sourceCompatibility = 1.8
 mainClassName = 'com.ryosms.pixela_marquee.PixelaMarqueeApp'
