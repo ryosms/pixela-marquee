@@ -1,12 +1,19 @@
-apply plugin: 'java'
+apply plugin: 'application'
 
 group 'com.ryosms'
 version '2018.1-SNAPSHOT'
 
 sourceCompatibility = 1.8
+mainClassName = 'com.ryosms.pixela_marquee.PixelaMarqueeApp'
 
 repositories {
     mavenCentral()
+}
+
+run {
+    if (project.hasProperty('args')) {
+        args project.args.split('\\s+')
+    }
 }
 
 test {
@@ -20,6 +27,10 @@ test {
 }
 
 dependencies {
+    compile "org.apache.xmlgraphics:batik-transcoder:${batikVersion}"
+    compile "org.apache.xmlgraphics:batik-codec:${batikVersion}"
+    compile "args4j:args4j:${args4jVersion}"
+    
     testCompile "org.junit.jupiter:junit-jupiter-api:${jUnitVersion}"
     testRuntime "org.junit.jupiter:junit-jupiter-engine:${jUnitVersion}"
 }
