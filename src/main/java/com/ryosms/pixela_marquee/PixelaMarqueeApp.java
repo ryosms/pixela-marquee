@@ -27,6 +27,7 @@ public class PixelaMarqueeApp {
 
     public static void main(String[] args) throws Exception {
         new PixelaMarqueeApp().run(args);
+        System.out.println("Finish!");
     }
 
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
