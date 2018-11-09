@@ -100,7 +100,7 @@ class Parameters {
         System.err.println("pixela-marquee");
         System.err.println("  Convert pixela graph to gif (animation) file.");
         System.err.println("  For details of date options, see Pixela API Document.\n");
-        System.err.println("Usage:");
+        System.err.println("Options:");
         parser.printUsage(System.err);
 
         System.exit(exitCode);
